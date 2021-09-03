@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CEE5A1DF26E1F5DB001FC85A /* StockListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE5A1DE26E1F5DB001FC85A /* StockListView.swift */; };
 		CEE8EBEA26E1C373002CB947 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE8EBE926E1C373002CB947 /* AppDelegate.swift */; };
 		CEE8EBEC26E1C373002CB947 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE8EBEB26E1C373002CB947 /* SceneDelegate.swift */; };
 		CEE8EBEE26E1C373002CB947 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE8EBED26E1C373002CB947 /* ContentView.swift */; };
@@ -16,9 +17,11 @@
 		CEE8EC0026E1C3CE002CB947 /* Webservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE8EBFF26E1C3CE002CB947 /* Webservice.swift */; };
 		CEE8EC0226E1C514002CB947 /* Stock.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE8EC0126E1C514002CB947 /* Stock.swift */; };
 		CEE8EC0526E1C926002CB947 /* StockViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE8EC0426E1C926002CB947 /* StockViewModel.swift */; };
+		CEE8EC0A26E1DBA2002CB947 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE8EC0926E1DBA2002CB947 /* SearchView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CEE5A1DE26E1F5DB001FC85A /* StockListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockListView.swift; sourceTree = "<group>"; };
 		CEE8EBE626E1C373002CB947 /* MvvmStockSwiftui.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MvvmStockSwiftui.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEE8EBE926E1C373002CB947 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEE8EBEB26E1C373002CB947 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -30,6 +33,7 @@
 		CEE8EBFF26E1C3CE002CB947 /* Webservice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Webservice.swift; sourceTree = "<group>"; };
 		CEE8EC0126E1C514002CB947 /* Stock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stock.swift; sourceTree = "<group>"; };
 		CEE8EC0426E1C926002CB947 /* StockViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockViewModel.swift; sourceTree = "<group>"; };
+		CEE8EC0926E1DBA2002CB947 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +68,7 @@
 			children = (
 				CEE8EBFD26E1C391002CB947 /* Models */,
 				CEE8EC0326E1C912002CB947 /* ViewModels */,
+				CEE8EC0626E1DB65002CB947 /* Views */,
 				CEE8EBFE26E1C3A0002CB947 /* Services */,
 				CEE8EBE926E1C373002CB947 /* AppDelegate.swift */,
 				CEE8EBEB26E1C373002CB947 /* SceneDelegate.swift */,
@@ -106,6 +111,15 @@
 				CEE8EC0426E1C926002CB947 /* StockViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		CEE8EC0626E1DB65002CB947 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CEE8EC0926E1DBA2002CB947 /* SearchView.swift */,
+				CEE5A1DE26E1F5DB001FC85A /* StockListView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -179,8 +193,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEE8EBEA26E1C373002CB947 /* AppDelegate.swift in Sources */,
+				CEE5A1DF26E1F5DB001FC85A /* StockListView.swift in Sources */,
 				CEE8EBEC26E1C373002CB947 /* SceneDelegate.swift in Sources */,
 				CEE8EC0026E1C3CE002CB947 /* Webservice.swift in Sources */,
+				CEE8EC0A26E1DBA2002CB947 /* SearchView.swift in Sources */,
 				CEE8EC0526E1C926002CB947 /* StockViewModel.swift in Sources */,
 				CEE8EC0226E1C514002CB947 /* Stock.swift in Sources */,
 				CEE8EBEE26E1C373002CB947 /* ContentView.swift in Sources */,

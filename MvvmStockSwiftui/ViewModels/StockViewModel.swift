@@ -15,7 +15,7 @@ struct StockViewModel {
         return self.stock.symbol.uppercased()
     }
     
-    var desciption: String {
+    var description: String {
         return self.stock.description
     }
     
@@ -34,9 +34,9 @@ class StockListViewModel: ObservableObject {
      * 可以使用 @Published 關鍵字讓屬性成為可被觀察的序列 */
     /* ⭐️ 加上 @Published 變成可被觀察的序列，一旦被"賦值"就發出事件 */
     @Published var stockViewModels: [StockViewModel] = [StockViewModel]()
-    var seatchTerm: String = ""
+    @Published var seatchTerm: String = ""
     
-    func load() {
+    func loadStocksData() {
         fetchStocks()
     }
     
