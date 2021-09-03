@@ -9,18 +9,27 @@ import Foundation
 
 class Webservice {
     
-    func fetchStocks(completion: @escaping ([Stock]?) -> Void) {
+    func fetchStocks(completion: @escaping (Result<[Stock], NetworkError>) -> Void) {
         guard let url = URL(string: "https://island-bramble.glitch.me/stock") else { fatalError("Stock URL is not correct") }
         
         URLSession.shared.dataTask(with: url) { data, response, error in
             guard let data = data, error == nil else {
-                completion(nil)
+                completion(.failure(.domainError))
                 return
             }
             
             let stocks = try? JSONDecoder().decode([Stock].self, from: data)
-            stocks == nil ? completion(nil) : completion(stocks )
+            if let stocks = stocks {
+                completion(.success(stocks))
+            } else {
+                completion(.failure(.decodingError))
+            }
         }.resume()
     }
     
+}
+
+enum NetworkError: Error {
+    case domainError
+    case decodingError
 }
