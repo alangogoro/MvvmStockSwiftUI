@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import SwiftUI
 
 /// 全頁股票列表的 ViewModel
 class StockListViewModel: ObservableObject {
@@ -17,7 +16,6 @@ class StockListViewModel: ObservableObject {
     @Published var stockViewModels: [StockViewModel] = [StockViewModel]()
     @Published var news: [NewsArticleViewModel] = [NewsArticleViewModel]()
     @Published var seatchTerm: String = ""
-    @Published var dragOffset: CGSize = CGSize(width: 0, height: 500)
     
     func loadData() {
         fetchStocks()

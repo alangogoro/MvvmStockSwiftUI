@@ -25,7 +25,7 @@ class Webservice {
                 if articles != nil {
                     completion(.success(articles!))
                 } else {
-                    completion(.failure(.domainError))
+                    completion(.failure(.decodingError))
                 }
             }
         }

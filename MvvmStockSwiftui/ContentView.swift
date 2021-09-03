@@ -28,8 +28,6 @@ struct ContentView: View {
         
         return NavigationView {
             ZStack(alignment: .leading) {
-                Color.black
-                
                 Text("September 3 2021")
                     .font(.custom("Arial",
                                   size: 32))
@@ -39,17 +37,31 @@ struct ContentView: View {
                                         leading: 20,
                                         bottom: 0,
                                         trailing: 0))
-                    .offset(y: -300)
+                    .offset(y: -250)
                 
                 SearchView(searchTerm: $stockListViewModel.seatchTerm)
-                    .offset(y: -250)
+                    .offset(y: -200)
                 
                 StockListView(stocks: filteredStocks)
                     .offset(y: 200)
                 
-                NewsArticleView(newsArticles: stockListViewModel.news)
-                    .offset(y: 500)
-            }
+                NewsArticleView(newsArticles: stockListViewModel.news, onDragBegin: { value in
+                    self.stockListViewModel.dragOffset = value.translation
+                }, onDragEnd: { value in
+                    
+                    if value.translation.height < 0 {
+                        // 向上滑
+                        self.stockListViewModel.dragOffset = CGSize(width: 0, height: 100)
+                    } else {
+                        // 向下滑
+                        self.stockListViewModel.dragOffset = CGSize(width: 0, height: 500)
+                    }
+                    
+                })
+                .animation(.spring())
+                .offset(y: stockListViewModel.dragOffset.height)
+            }.background(Color.black)
+            
             .navigationTitle("Stocks")
         }.edgesIgnoringSafeArea(Edge.Set(.bottom))
     }
