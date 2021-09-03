@@ -18,7 +18,7 @@ struct ContentView: View {
         UITableView.appearance().backgroundColor = UIColor.black
         UITableViewCell.appearance().backgroundColor = UIColor.black
         
-        stockListViewModel.loadStocksData()
+        stockListViewModel.loadData()
     }
     
     var body: some View {
@@ -39,13 +39,16 @@ struct ContentView: View {
                                         leading: 20,
                                         bottom: 0,
                                         trailing: 0))
-                    .offset(y: -250)
+                    .offset(y: -300)
                 
                 SearchView(searchTerm: $stockListViewModel.seatchTerm)
-                    .offset(y: -200)
+                    .offset(y: -250)
                 
                 StockListView(stocks: filteredStocks)
-                    .offset(y: 130)
+                    .offset(y: 200)
+                
+                NewsArticleView(newsArticles: stockListViewModel.news)
+                    .offset(y: 500)
             }
             .navigationTitle("Stocks")
         }.edgesIgnoringSafeArea(Edge.Set(.bottom))
