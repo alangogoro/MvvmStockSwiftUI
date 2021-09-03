@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @State private var searchTerm: String = ""
+    @ObservedObject private var stockListViewModel = StockListViewModel()
     
     init() {
         UINavigationBar.appearance().backgroundColor = UIColor.black
@@ -17,10 +17,16 @@ struct ContentView: View {
         
         UITableView.appearance().backgroundColor = UIColor.black
         UITableViewCell.appearance().backgroundColor = UIColor.black
+        
+        stockListViewModel.loadStocksData()
     }
     
     var body: some View {
-        NavigationView {
+        
+        let filteredStocks = stockListViewModel.seatchTerm.isEmpty ?
+            stockListViewModel.stockViewModels : stockListViewModel.stockViewModels.filter { $0.symbol.starts(with: stockListViewModel.seatchTerm) }
+        
+        return NavigationView {
             ZStack(alignment: .leading) {
                 Color.black
                 
@@ -33,11 +39,13 @@ struct ContentView: View {
                                         leading: 20,
                                         bottom: 0,
                                         trailing: 0))
-                    .offset(y: -350)
-                    // .offset(y: -400)
+                    .offset(y: -250)
                 
-                SearchView(searchTerm: $searchTerm)
-                    .offset(y: -300)
+                SearchView(searchTerm: $stockListViewModel.seatchTerm)
+                    .offset(y: -200)
+                
+                StockListView(stocks: filteredStocks)
+                    .offset(y: 130)
             }
             .navigationTitle("Stocks")
         }.edgesIgnoringSafeArea(Edge.Set(.bottom))

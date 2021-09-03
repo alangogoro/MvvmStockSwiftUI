@@ -10,7 +10,7 @@ import Foundation
 class Webservice {
     
     func fetchStocks(completion: @escaping (Result<[Stock], NetworkError>) -> Void) {
-        guard let url = URL(string: "https://island-bramble.glitch.me/stock") else { fatalError("Stock URL is not correct") }
+        guard let url = URL(string: "https://island-bramble.glitch.me/stocks") else { fatalError("Stock URL is not correct") }
         
         URLSession.shared.dataTask(with: url) { data, response, error in
             guard let data = data, error == nil else {

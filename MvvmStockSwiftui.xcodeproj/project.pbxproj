@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CEE5A1DF26E1F5DB001FC85A /* StockListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE5A1DE26E1F5DB001FC85A /* StockListView.swift */; };
 		CEE8EBEA26E1C373002CB947 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE8EBE926E1C373002CB947 /* AppDelegate.swift */; };
 		CEE8EBEC26E1C373002CB947 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE8EBEB26E1C373002CB947 /* SceneDelegate.swift */; };
 		CEE8EBEE26E1C373002CB947 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE8EBED26E1C373002CB947 /* ContentView.swift */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CEE5A1DE26E1F5DB001FC85A /* StockListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockListView.swift; sourceTree = "<group>"; };
 		CEE8EBE626E1C373002CB947 /* MvvmStockSwiftui.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MvvmStockSwiftui.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEE8EBE926E1C373002CB947 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEE8EBEB26E1C373002CB947 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				CEE8EC0926E1DBA2002CB947 /* SearchView.swift */,
+				CEE5A1DE26E1F5DB001FC85A /* StockListView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -190,6 +193,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEE8EBEA26E1C373002CB947 /* AppDelegate.swift in Sources */,
+				CEE5A1DF26E1F5DB001FC85A /* StockListView.swift in Sources */,
 				CEE8EBEC26E1C373002CB947 /* SceneDelegate.swift in Sources */,
 				CEE8EC0026E1C3CE002CB947 /* Webservice.swift in Sources */,
 				CEE8EC0A26E1DBA2002CB947 /* SearchView.swift in Sources */,
